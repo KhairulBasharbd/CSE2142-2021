@@ -41,40 +41,41 @@ public class StudentList {
 			System.exit(0);
 
 		}
+		Constants cons = new Constants();
 
 		if(args[0].equals("a")) {
-			System.out.println("Loading data ...");	
+			System.out.println(cons.loading);	
 
 			String fileText = read();
 			String students[] = fileText.split(",");			
 			for(String student : students) { 
 				System.out.println(student); 
 			}
-			System.out.println("Data Loaded.");
+			System.out.println(cons.loaded);
 		}
 
 		else if(args[0].equals("r")){
-			System.out.println("Loading data ...");	
+			System.out.println(cons.loading);	
 
 			String fileText = read();
 			String students[] = fileText.split(",");	
 			Random x = new Random();
 			int randomNum = x.nextInt(students.length);
 			System.out.println(students[randomNum]);
-			System.out.println("Data Loaded.");			
+			System.out.println(cons.loaded);			
 		}
 
 		else if(args[0].contains("+")){
-			System.out.println("Loading data ...");	
+			System.out.println(cons.loading);	
 
 			String newStudent = args[0].substring(1);
 			write(newStudent);
 							
-			System.out.println("Data Loaded.");	
+			System.out.println(cons.loaded);	
 		}
 
 		else if(args[0].contains("?")){
-			System.out.println("Loading data ...");	
+			System.out.println(cons.loading);	
 
 			String fileText = read();
 			String students[] = fileText.split(",");	
@@ -88,11 +89,11 @@ public class StudentList {
 				}
 			}
 
-			System.out.println("Data Loaded.");				
+			System.out.println(cons.loaded);				
 		}
 
 		else if(args[0].contains("c")){
-			System.out.println("Loading data ...");	
+			System.out.println(cons.loading);	
 
 				String fileText = read();
 				char charFileText[] = fileText.toCharArray();			
@@ -105,7 +106,7 @@ public class StudentList {
 				}
 			System.out.println(count +" word(s) found ");
 
-			System.out.println("Data Loaded.");				
+			System.out.println(cons.loaded);				
 		}
 	}
 }
