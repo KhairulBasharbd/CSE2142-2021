@@ -75,12 +75,11 @@ public class StudentList {
 			System.out.println(cons.loading);	
 
 			String students[] = read().split(",");	
-			boolean done = false;
 
-			for(int idx = 0; idx<students.length && !done; idx++) {
+			for(int idx = 0; idx<students.length; idx++) {
 				if(students[idx].trim().equals(args[0].substring(1))) {
 					System.out.println("We found it!");	
-					done=true;
+					break;
 				}
 			}
 
