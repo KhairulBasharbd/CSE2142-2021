@@ -37,7 +37,8 @@ public class StudentList {
 
 //		Check arguments
 		if (!args[0].equals("a") && !args[0].equals("r") &&  !args[0].contains("+") && !args[0].contains("?") && !args[0].contains("c")){
-			System.out.println("You Entered wrong argument, Run Again ... ");
+			//System.out.println("You Entered wrong argument, Run Again ... ");
+			System.out.println("You Entered wrong argument, please Run Again ... ");
 			System.exit(0);
 
 		}
