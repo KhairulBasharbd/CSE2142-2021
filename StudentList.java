@@ -79,7 +79,7 @@ public class StudentList {
 			for(int idx = 0; idx<students.length; idx++) {
 				if(students[idx].trim().equals(args[0].substring(1))) {
 					System.out.println("We found it!");	
-					break;
+					
 				}
 			}
 
@@ -89,15 +89,8 @@ public class StudentList {
 		else if(args[0].contains("c")){
 			System.out.println(cons.loading);	
 
-			char charFileText[] = read().toCharArray();			
-			int count=1;
-
-			for(char c:charFileText) {
-				if(c ==' ') {							
-					count++;		
-				}
-			}
-			System.out.println(count +" word(s) found ");
+			String students[] = read().split(",");	
+			System.out.println(students.length +" word(s) found ");
 
 			System.out.println(cons.loaded);				
 		}
