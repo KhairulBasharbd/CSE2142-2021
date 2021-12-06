@@ -46,8 +46,7 @@ public class StudentList {
 		if(args[0].equals("a")) {
 			System.out.println(cons.loading);	
 
-			String fileText = read();
-			String students[] = fileText.split(",");			
+			String students[] = read().split(",");			
 			for(String student : students) { 
 				System.out.println(student); 
 			}
@@ -57,19 +56,17 @@ public class StudentList {
 		else if(args[0].equals("r")){
 			System.out.println(cons.loading);	
 
-			String fileText = read();
-			String students[] = fileText.split(",");	
+			String students[] = read().split(",");	
 			Random x = new Random();
-			int randomNum = x.nextInt(students.length);
-			System.out.println(students[randomNum]);
+			System.out.println(students[x.nextInt(students.length)]);
+
 			System.out.println(cons.loaded);			
 		}
 
 		else if(args[0].contains("+")){
 			System.out.println(cons.loading);	
 
-			String newStudent = args[0].substring(1);
-			write(newStudent);
+			write(args[0].substring(1));
 							
 			System.out.println(cons.loaded);	
 		}
@@ -77,13 +74,11 @@ public class StudentList {
 		else if(args[0].contains("?")){
 			System.out.println(cons.loading);	
 
-			String fileText = read();
-			String students[] = fileText.split(",");	
+			String students[] = read().split(",");	
 			boolean done = false;
-			String searchStudent = args[0].substring(1);
 
 			for(int idx = 0; idx<students.length && !done; idx++) {
-				if(students[idx].trim().equals(searchStudent)) {
+				if(students[idx].trim().equals(args[0].substring(1))) {
 					System.out.println("We found it!");	
 					done=true;
 				}
@@ -95,15 +90,14 @@ public class StudentList {
 		else if(args[0].contains("c")){
 			System.out.println(cons.loading);	
 
-				String fileText = read();
-				char charFileText[] = fileText.toCharArray();			
-				int count=1;
+			char charFileText[] = read().toCharArray();			
+			int count=1;
 
-				for(char c:charFileText) {
-					if(c ==' ') {	
-						count++;		
-					}
+			for(char c:charFileText) {
+				if(c ==' ') {							
+					count++;		
 				}
+			}
 			System.out.println(count +" word(s) found ");
 
 			System.out.println(cons.loaded);				
